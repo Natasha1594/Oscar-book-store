@@ -1,0 +1,1 @@
+web: gunicorn oscarbookstore.wsgi --log-file -
