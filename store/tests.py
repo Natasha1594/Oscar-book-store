@@ -1,12 +1,23 @@
 from django.test import TestCase
 from .models import Category
 # Create your tests here.
-class CategoryTest(TestCase):
+class CategoryTestClass(TestCase):
     def setUp(self):
-        self.Category = Category(name='Thiller')
-        self.Category.save_category()
+        self.category = Category(name='thiller')
+        self.category.save_category()
+
     def test_instance(self):
-        self.assertTrue(isinstance(self.Category,Category))
+        self.assertTrue(isinstance(self.category, Category))
+
+    def test_save_category(self):
+        self.category.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) > 0)
+
+    def test_delete_category(self):
+        self.category.delete_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) == 0
 	#name = models.CharField(max_length = 100)
 	#slug = models.SlugField(max_length = 150, unique=True ,db_index=True)
 	#icon = models.FileField(upload_to = "category/")
