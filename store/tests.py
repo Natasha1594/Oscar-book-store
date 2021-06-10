@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Category
+from .models import Category, Writer, Book, Review, Slider
 # Create your tests here.
 class CategoryTestClass(TestCase):
     def setUp(self):
