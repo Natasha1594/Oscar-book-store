@@ -9,8 +9,8 @@ class CategoryTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.category, Category))
 
-    def test_save_category(self):
-        self.category.save_category()
+    def test_create_at(self):
+        self.category.create_at_category()
         categories = Category.objects.all()
         self.assertTrue(len(categories) > 0)
 
