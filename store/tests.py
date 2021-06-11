@@ -18,3 +18,22 @@ class CategoryTestClass(TestCase):
         self.category.delete_category()
         category = Category.objects.all()
         self.assertTrue(len(category) == 0)
+
+class WriterTestClass(TestCase):
+    def setUp(self):
+        self.writer = Writer(name='thiller')
+        self.writer.save_writer()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.writer, Writer))
+
+    def test_create_at(self):
+        self.writer.create_at_writer()
+        writers = Writer.objects.all()
+        self.assertTrue(len(writers) > 0)
+
+    def test_delete_category(self):
+        self.writer.delete_writer()
+        writer =  Writer.objects.all()
+        self.assertTrue(len(writer) == 0)
+
